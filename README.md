@@ -29,5 +29,4 @@ Eg. for the NFT with mintId - `CRHpiQu8AeUC7vvDbj58vRizsv65xbRBkpaJKnVgwF2e`
 Add two textboxes and a submit button to the page. The textboxes will be used to enter trait_type and value respectively. When the submit button is clicked send a transaction which if approved by user, adds the trait entered to attributes array of the NFT (Assume the user to be the update_authority of the NFT). 
 
 ### Hint -
-* For uploading the metadata to arweave make use of [bundlr](https://docs.bundlr.network/docs/client/transactions).
-* After which you can update URI of the NFT using metaplex-foundation/js.
+* make use of metaplex-foundation/js for uploading metadata file to arweave and updating the onchain uri.
