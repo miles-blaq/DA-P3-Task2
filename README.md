@@ -1,13 +1,12 @@
 # Doge academy - Phase 3 - Task2
 ## 1
-Fork this repo, create a nextjs app. Using [@solana/wallet-adapter](https://solana-labs.github.io/wallet-adapter/) add a button to the page to enable a user to connect their phantom wallet with the app.
+Fork this repo, create a nextjs app. Using [@solana/wallet-adapter](https://solana-labs.github.io/wallet-adapter) add a button to the page to enable a user to connect their phantom wallet with the app.
 
 ## 2
-When a user connects their wallet, display the `mindIds` of all the spl-tokens currently in the user's wallet.
+When a user connects their wallet, display the `mindIds` of all the spl-tokens currently in the user's wallet by making use of [getProgramAccounts](https://solanacookbook.com/guides/get-program-accounts.html#facts) method. Also displays the decimals of each token using [getParsedAccountInfo](https://solana-labs.github.io/solana-web3.js/classes/Connection.html#getParsedAccountInfo).
 
 ## 3
-Add a textbox and a submit button to the page.
-When the mintId of a NFT is entered, the `attributes` of the NFT should be shown. Explore [@metaplex-foundation/js](https://github.com/solana-labs/wallet-adapter) for this.
+Add a textbox to the page. When the mintId of a NFT is entered, the `attributes` of the NFT should be shown. Explore [@metaplex-foundation/js](https://github.com/metaplex-foundation/js) for this.
 
 Eg. for the NFT with mintId - `CRHpiQu8AeUC7vvDbj58vRizsv65xbRBkpaJKnVgwF2e`
 
@@ -24,9 +23,8 @@ Eg. for the NFT with mintId - `CRHpiQu8AeUC7vvDbj58vRizsv65xbRBkpaJKnVgwF2e`
 |sequence    |236            |
 
 ## 4
-Design a [mongooseJs](https://mongoosejs.com/docs/guide.html) database schema with the following fields. When the submit button is clicked, store information about the NFT entered in the schema.
-|Field | Description |
-|------|:-----------:|
-|creatorId|publicKey of the wallet that was connected(as string)|
-|name|name of the NFT|
-|creators|array of creators of the NFT|
+Add two textboxes and a submit button to the page. The textboxes will be used to enter trait_type and value respectively. When the submit button is clicked send a transaction which if approved by user, adds the trait entered to attributes array of the NFT (Assume the user to be the update_authority of the NFT). 
+
+### Hint -
+* For uploading the metadata to arweave make use of [bundlr](https://docs.bundlr.network/docs/client/transactions).
+* After which you can update URI of the NFT using metaplex-foundation/js.
