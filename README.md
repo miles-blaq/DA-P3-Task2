@@ -1,4 +1,7 @@
 # Doge academy - Phase 3 - Task2
+```
+NOTE - Make sure to use only DEVNET for the task.
+```
 ## 1
 Fork this repo, create a nextjs app. Using [@solana/wallet-adapter](https://solana-labs.github.io/wallet-adapter) add a button to the page to enable a user to connect their phantom wallet with the app.
 
