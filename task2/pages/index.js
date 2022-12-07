@@ -6,11 +6,21 @@ import { useWallet } from "@solana/wallet-adapter-react"
 import { TOKEN_PROGRAM_ID } from '@solana/spl-token'
 import { useState } from 'react'
 import AccountInfo from '../Components/AccountInfo'
+import { FindNft } from '../Components/FindNft'
+import { UpdateMetaData } from '../Components/UpdateMetaData'
 //here
 
 
 export default function Home() {
+  const { wallet, publicKey } = useWallet()
 
+  if(!wallet){
+    return(
+    <main className={styles.main}> 
+ 
+    <p>Please connect your wallet </p>
+    </main>)
+}
   return (
     <div className={styles.container}>
     <Head>
@@ -20,9 +30,12 @@ export default function Home() {
     </Head>
 
     <main className={styles.main}>
-      {/* sol */}
-    <h1> Task 3</h1>
+    <h1 className="text-3xl font-bold underline">
+      Task 3
+    </h1>
      <AccountInfo/>
+     <FindNft/>
+     <UpdateMetaData/>
     </main>
 
     <footer className={styles.footer}>
